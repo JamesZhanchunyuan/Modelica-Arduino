@@ -90,13 +90,6 @@ void yield(void);
 #undef abs
 #endif
 
-#ifndef max
-#define max(a,b) ((a)>(b)?(a):(b))
-#endif
-
-#ifndef min
-#define min(a,b) ((a)<(b)?(a):(b))
-#endif
 
 #define abs(x) ((x)>0?(x):-(x))
 #define constrain(amt,low,high) ((amt)<(low)?(low):((amt)>(high)?(high):(amt)))
@@ -233,6 +226,15 @@ void loop(void);
 #ifdef __cplusplus
 } // extern "C"
 #endif
+
+// 模板函数放在 extern "C" 块之外
+template<typename T> const T& min(const T& a, const T& b) {
+    return (b < a) ? b : a;
+}
+
+template<typename T> const T& max(const T& a, const T& b) {
+    return (a < b) ? b : a;
+}
 
 //
 //#ifdef __cplusplus

@@ -4,6 +4,7 @@
 #include "Event.h"
 
 #include "Arduino.h"
+#include <atomic>  // 包含 atomic 头文件
 
 typedef void (*InterruptSeriveRoutine)();
 

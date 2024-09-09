@@ -1,21 +1,56 @@
 #include <thread>
 #include <stdio.h>
-#include <conio.h>
+#include <cstdint>
+#include <atomic>  // 添加对原子操作的支持
 
 #include "ModelicaArduino.h"
 #include "ModelicaUtilities.h"
 #include "ModelicaUtilityFunctions.h"
 
 #include "Arduino.h"
-#include <stdint.h>
 #include "SoftArduino.h"
 
+#ifdef _WIN32
+#include <conio.h>  //
+#else
+#include <termios.h>
+#include <unistd.h>
+#include <fcntl.h>
+#endif
 
+
+#ifdef _WIN32
+// Windows-specific implementations (if needed)
+#else
+bool kbhit() {
+    struct termios oldt, newt;
+    int ch;
+    int oldf;
+
+    tcgetattr(STDIN_FILENO, &oldt);
+    newt = oldt;
+    newt.c_lflag &= ~(ICANON | ECHO);
+    tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+    oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
+    fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
+
+    ch = getchar();
+
+    tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+    fcntl(STDIN_FILENO, F_SETFL, oldf);
+
+    if(ch != EOF) {
+        ungetc(ch, stdin);
+        return true;
+    }
+    return false;
+}
+#endif
 /** Constructor function of the external object */
 void * ModelicaArduino_open(void *callbacks) {
 
 	setModelicaUtilityFunctions(reinterpret_cast<ModelicaUtilityFunctions_t *>(callbacks));
-	
+
 	return INSTANCE;
 }
 
@@ -25,10 +60,10 @@ void ModelicaArduino_close(void *externalObject) {
 }
 
 void ModelicaArduino_update(void *instance__,
-							double time, 
-							double analogReference, 
+							double time,
+							double analogReference,
 							double *potential,
-							int *portMode, 
+							int *portMode,
 							int *pulseWidth,
 							int *pulsePeriod) {
 

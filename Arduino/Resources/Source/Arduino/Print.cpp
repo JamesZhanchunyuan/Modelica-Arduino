@@ -1,14 +1,6 @@
 #include "Print.h"
 
-#include <float.h> // for isnan(), isinf()
-
-#ifndef isnan
-#define isnan(x) _isnan(x)
-#endif
-
-#ifndef isinf
-#define isinf(x) (!_finite(x))
-#endif
+#include <cmath> // 使用 <cmath> 替代 <float.h> 和自定义宏
 
 /* default implementation: may be overridden */
 size_t Print::write(const uint8_t *buffer, size_t size)
@@ -160,8 +152,8 @@ size_t Print::printFloat(double number, uint8_t digits)
 { 
 	size_t n = 0;
 
-	if (isnan(number)) return print("nan");
-	if (isinf(number)) return print("inf");
+	if (std::isnan(number)) return print("nan");
+	if (std::isinf(number)) return print("inf");
 	if (number > 4294967040.0) return print ("ovf");  // constant determined empirically
 	if (number <-4294967040.0) return print ("ovf");  // constant determined empirically
 

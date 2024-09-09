@@ -37,3 +37,5 @@ Thumbs.db
 # test artifacts
 tests/work/
 __pycache__
+
+.idea
