@@ -1,13 +1,13 @@
 within Arduino.Components;
 model DFLG6DOF
   Modelica.Mechanics.MultiBody.Parts.BodyBox baseBodyShape(                r(
-        displayUnit="mm") = {0,0.05,0}, animation=false)
+        each displayUnit="mm") = {0,0.05,0}, animation=false)
                                         annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-250})));
   Modelica.Mechanics.MultiBody.Parts.BodyBox baseBodyShape2(                r(
-        displayUnit="mm") = {0,0.015,0}, animation=false)
+        each displayUnit="mm") = {0,0.015,0}, animation=false)
                                          annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
@@ -15,7 +15,7 @@ model DFLG6DOF
   Modelica.Mechanics.MultiBody.Joints.Revolute baseRevolute(
     n={0,1,0},
     cylinderLength(displayUnit="mm") = 0.01,
-    cylinderDiameter(displayUnit="mm") = 0.01,
+    cylinderDiameter(each displayUnit="mm") = 0.01,
     useAxisFlange=true,
     phi(start=0)) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -23,7 +23,7 @@ model DFLG6DOF
         origin={0,-220})));
   Modelica.Mechanics.MultiBody.Joints.Revolute shoulderRevolute(
     n={0,0,1},
-    cylinderDiameter(displayUnit="mm") = 0.001,
+    cylinderDiameter(each displayUnit="mm") = 0.001,
     cylinderLength(displayUnit="mm") = 0.07,
     useAxisFlange=true)
                   annotation (Placement(transformation(
@@ -31,13 +31,13 @@ model DFLG6DOF
         rotation=0,
         origin={0,-140})));
   Modelica.Mechanics.MultiBody.Parts.BodyBox baseBodyShape8(                r(
-        displayUnit="mm") = {0,0.09,0}, animation=false)
+        each displayUnit="mm") = {0,0.09,0}, animation=false)
                                         annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-100})));
   Modelica.Mechanics.MultiBody.Joints.Revolute elbowRevolute(
-    cylinderDiameter(displayUnit="mm") = 0.001,
+    cylinderDiameter(each displayUnit="mm") = 0.001,
     cylinderLength(displayUnit="mm") = 0.07,
     useAxisFlange=true,
     n={0,0,1})    annotation (Placement(transformation(
@@ -46,14 +46,14 @@ model DFLG6DOF
         origin={0,-60})));
 
   Modelica.Mechanics.MultiBody.Parts.BodyBox baseBodyShape4(                r(
-        displayUnit="mm") = {0,0.089,0}, animation=false)
+        each displayUnit="mm") = {0,0.089,0}, animation=false)
                                          annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-20})));
   Modelica.Mechanics.MultiBody.Joints.Revolute wristVerRevolute(
     n={0,0,1},
-    cylinderDiameter(displayUnit="mm") = 0.001,
+    cylinderDiameter(each displayUnit="mm") = 0.001,
     cylinderLength(displayUnit="mm") = 0.07,
     useAxisFlange=true)
                   annotation (Placement(transformation(
@@ -61,7 +61,7 @@ model DFLG6DOF
         rotation=0,
         origin={0,20})));
   Modelica.Mechanics.MultiBody.Parts.BodyBox baseBodyShape5(                r(
-        displayUnit="mm") = {-0.027,0.01,0}, animation=false)
+        each displayUnit="mm") = {-0.027,0.01,0}, animation=false)
                                              annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
@@ -71,14 +71,14 @@ model DFLG6DOF
   Modelica.Mechanics.MultiBody.Joints.Revolute wristRotRevolute(
     n={0,1,0},
     cylinderLength(displayUnit="mm") = 0.05,
-    cylinderDiameter(displayUnit="mm") = 0.001,
+    cylinderDiameter(each displayUnit="mm") = 0.001,
     useAxisFlange=true)
                   annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,100})));
   Modelica.Mechanics.MultiBody.Parts.BodyBox baseBodyShape6(                r(
-        displayUnit="mm") = {0,0.022,0}, animation=false)
+        each displayUnit="mm") = {0,0.022,0}, animation=false)
                                          annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
@@ -88,13 +88,13 @@ model DFLG6DOF
         "modelica://Arduino/Resources/Shapes/I_Rotative_Base_Main_4Servo__7.wrl",
     angles={-90,0,0},
     color={100,100,100},
-    r(displayUnit="mm"))
+    r(each displayUnit="mm"))
     annotation (Placement(transformation(extent={{60,-290},{80,-270}})));
 
   Components.BodyShape bodyShape1(
     angles={-90,0,0},
     color={100,100,100},
-    r(displayUnit="mm"),
+    r(each displayUnit="mm"),
     shapeType=
         "modelica://Arduino/Resources/Shapes/I_Rotative_Base_Top_4Servo__9.wrl",
     icon=
@@ -106,7 +106,7 @@ model DFLG6DOF
     color={100,100,100},
     shapeType="modelica://Arduino/Resources/Shapes/I_Case4Servo__10.wrl",
     icon="modelica://Arduino/Resources/Shapes/I_Case4Servo__10.png",
-    r(displayUnit="mm") = {0.01,-0.013,0}) annotation (Placement(transformation(
+    r(each displayUnit="mm") = {0.01,-0.013,0}) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={70,-160})));
@@ -114,25 +114,25 @@ model DFLG6DOF
     angles={-90,0,0},
     shapeType="modelica://Arduino/Resources/Shapes/I_Servo__8.wrl",
     icon="modelica://Arduino/Resources/Shapes/I_Servo__8.png",
-    r(displayUnit="mm") = {-0.01,0.01,0.018},
+    r(each displayUnit="mm") = {-0.01,0.01,0.018},
     color={50,50,50})
     annotation (Placement(transformation(extent={{100,-170},{120,-150}})));
   Components.BodyShape bodyShape4(
     shapeType="modelica://Arduino/Resources/Shapes/I_Servo_Horn__12.wrl",
-    r(displayUnit="mm") = {0,0,-0.025},
+    r(each displayUnit="mm") = {0,0,-0.025},
     angles={0,-90,0},
     icon="modelica://Arduino/Resources/Shapes/I_Servo_Horn__12.png",
     color={230,230,230})
     annotation (Placement(transformation(extent={{180,-110},{200,-90}})));
   Components.BodyShape bodyShape5(
-    r(displayUnit="mm") = {0,0.045,0},
+    r(each displayUnit="mm") = {0,0.045,0},
     angles={90,0,90},
     shapeType="modelica://Arduino/Resources/Shapes/I_U4Servo__15.wrl",
     icon="modelica://Arduino/Resources/Shapes/I_U4Servo__15.png",
     color={100,100,100})
     annotation (Placement(transformation(extent={{60,-110},{80,-90}})));
   Components.BodyShape bodyShape6(
-    r(displayUnit="mm") = {0,0.045,0},
+    r(each displayUnit="mm") = {0,0.045,0},
     shapeType="modelica://Arduino/Resources/Shapes/I_U4Servo__15.wrl",
     icon="modelica://Arduino/Resources/Shapes/I_U4Servo__15.png",
     color={100,100,100},
@@ -140,7 +140,7 @@ model DFLG6DOF
     annotation (Placement(transformation(extent={{100,-110},{120,-90}})));
   Components.BodyShape bodyShape7(
     shapeType="modelica://Arduino/Resources/Shapes/I_Servo_Horn__12.wrl",
-    r(displayUnit="mm") = {0,0,-0.025},
+    r(each displayUnit="mm") = {0,0,-0.025},
     angles={0,-90,0},
     icon="modelica://Arduino/Resources/Shapes/I_Servo_Horn__12.png",
     color={230,230,230})
@@ -149,61 +149,61 @@ model DFLG6DOF
     color={100,100,100},
     shapeType="modelica://Arduino/Resources/Shapes/I_Case4Servo__10.wrl",
     icon="modelica://Arduino/Resources/Shapes/I_Case4Servo__10.png",
-    r(displayUnit="mm") = {-0.014,0.011,0.001},
+    r(each displayUnit="mm") = {-0.014,0.011,0.001},
     angles={-90,90,0})
     annotation (Placement(transformation(extent={{60,-70},{80,-50}})));
   Components.BodyShape bodyShape9(
     shapeType="modelica://Arduino/Resources/Shapes/I_Servo__8.wrl",
     icon="modelica://Arduino/Resources/Shapes/I_Servo__8.png",
     color={50,50,50},
-    r(displayUnit="mm") = {-0.01,-0.009,0.018},
+    r(each displayUnit="mm") = {-0.01,-0.009,0.018},
     angles={-90,-90,0})
     annotation (Placement(transformation(extent={{100,-70},{120,-50}})));
   Components.BodyShape bodyShape10(
     color={100,100,100},
     shapeType="modelica://Arduino/Resources/Shapes/I_L4Servo__21.wrl",
     icon="modelica://Arduino/Resources/Shapes/I_L4Servo__21.png",
-    r(displayUnit="mm") = {-0.016,0.043,0},
+    r(each displayUnit="mm") = {-0.016,0.043,0},
     angles={90,90,0})
     annotation (Placement(transformation(extent={{140,-70},{160,-50}})));
   Components.BodyShape bodyShape11(
     shapeType="modelica://Arduino/Resources/Shapes/I_U4Servo__15.wrl",
     icon="modelica://Arduino/Resources/Shapes/I_U4Servo__15.png",
     color={100,100,100},
-    r(displayUnit="mm") = {0,0.043,0},
+    r(each displayUnit="mm") = {0,0.043,0},
     angles={-90,0,90})
     annotation (Placement(transformation(extent={{180,-70},{200,-50}})));
   Components.BodyShape bodyShape12(
     color={100,100,100},
     shapeType="modelica://Arduino/Resources/Shapes/I_Case4Servo__10.wrl",
     icon="modelica://Arduino/Resources/Shapes/I_Case4Servo__10.png",
-    r(displayUnit="mm") = {-0.014,-0.011,0},
+    r(each displayUnit="mm") = {-0.014,-0.011,0},
     angles={-90,90,0})
     annotation (Placement(transformation(extent={{60,50},{80,70}})));
   Components.BodyShape bodyShape13(
     shapeType="modelica://Arduino/Resources/Shapes/I_Servo__8.wrl",
     icon="modelica://Arduino/Resources/Shapes/I_Servo__8.png",
     color={50,50,50},
-    r(displayUnit="mm") = {0.01,0.009,0.017},
+    r(each displayUnit="mm") = {0.01,0.009,0.017},
     angles={-90,90,0})
     annotation (Placement(transformation(extent={{100,50},{120,70}})));
   Components.BodyShape bodyShape14(
     color={100,100,100},
     shapeType="modelica://Arduino/Resources/Shapes/I_Case4Servo__10.wrl",
     icon="modelica://Arduino/Resources/Shapes/I_Case4Servo__10.png",
-    r(displayUnit="mm") = {-0.014,-0.003,0.011},
+    r(each displayUnit="mm") = {-0.014,-0.003,0.011},
     angles={0,-90,0})
     annotation (Placement(transformation(extent={{140,50},{160,70}})));
   Components.BodyShape bodyShape15(
     shapeType="modelica://Arduino/Resources/Shapes/I_Servo__8.wrl",
     icon="modelica://Arduino/Resources/Shapes/I_Servo__8.png",
     color={50,50,50},
-    r(displayUnit="mm") = {-0.037,-0.02,-0.009},
+    r(each displayUnit="mm") = {-0.037,-0.02,-0.009},
     angles={0,-90,0})
     annotation (Placement(transformation(extent={{180,50},{200,70}})));
   Components.BodyShape bodyShape16(
     shapeType="modelica://Arduino/Resources/Shapes/I_Servo_Horn__12.wrl",
-    r(displayUnit="mm") = {0,0,-0.025},
+    r(each displayUnit="mm") = {0,0,-0.025},
     angles={0,-90,0},
     icon="modelica://Arduino/Resources/Shapes/I_Servo_Horn__12.png",
     color={230,230,230})
@@ -219,7 +219,7 @@ model DFLG6DOF
   Modelica.Mechanics.MultiBody.Joints.Revolute gripperRevolute(
     useAxisFlange=true,
     n={1,0,0},
-    cylinderDiameter(displayUnit="mm") = 0.001,
+    cylinderDiameter(each displayUnit="mm") = 0.001,
     cylinderLength(displayUnit="mm") = 0.05) annotation (Placement(
         transformation(
         extent={{10,10},{-10,-10}},
@@ -236,12 +236,12 @@ model DFLG6DOF
         rotation=180,
         origin={70,180})));
   Modelica.Mechanics.MultiBody.Parts.FixedTranslation fixedTranslation4(r(
-        displayUnit="mm") = {0,0.002,0}) annotation (Placement(transformation(
+        each displayUnit="mm") = {0,0.002,0}) annotation (Placement(transformation(
         extent={{10,-10},{-10,10}},
         rotation=180,
         origin={30,180})));
   Modelica.Mechanics.MultiBody.Parts.FixedTranslation fixedTranslation5(r(
-        displayUnit="mm") = {0,0.002,0}) annotation (Placement(transformation(
+        each displayUnit="mm") = {0,0.002,0}) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={-30,180})));
@@ -261,7 +261,7 @@ model DFLG6DOF
         origin={50,210})));
   Components.BodyShape bodyShape17(
     color={50,50,50},
-    r(displayUnit="mm"),
+    r(each displayUnit="mm"),
     angles={0,90,90},
     shapeType=
         "modelica://Arduino/Resources/Shapes/I_Gripper_Main_4Servo__29.wrl",
@@ -271,7 +271,7 @@ model DFLG6DOF
     shapeType="modelica://Arduino/Resources/Shapes/I_Servo__8.wrl",
     icon="modelica://Arduino/Resources/Shapes/I_Servo__8.png",
     color={50,50,50},
-    r(displayUnit="mm") = {-0.032,0.00975,-0.01},
+    r(each displayUnit="mm") = {-0.032,0.00975,-0.01},
     angles={-90,0,-90})
     annotation (Placement(transformation(extent={{60,130},{80,150}})));
   Components.BodyShape bodyShape19(
@@ -279,13 +279,13 @@ model DFLG6DOF
         "modelica://Arduino/Resources/Shapes/I_Gripper_Left_Arm_4Servo__33.wrl",
     icon=
         "modelica://Arduino/Resources/Shapes/I_Gripper_Left_Arm_4Servo__33.png",
-    r(displayUnit="mm"),
+    r(each displayUnit="mm"),
     angles={0,90,90},
     color={50,50,50})
     annotation (Placement(transformation(extent={{-100,170},{-120,190}})));
 
   Components.BodyShape bodyShape20(
-    r(displayUnit="mm"),
+    r(each displayUnit="mm"),
     shapeType=
         "modelica://Arduino/Resources/Shapes/I_Gripper_Right_Arm_4Servo__34.wrl",
     icon=
@@ -300,7 +300,7 @@ model DFLG6DOF
         "modelica://Arduino/Resources/Shapes/I_Gripper_Came_4Servo__31.wrl",
     icon="modelica://Arduino/Resources/Shapes/I_Gripper_Came_4Servo__31.png",
     angles={0,90,0},
-    r(displayUnit="mm") = {0.015,0,0})
+    r(each displayUnit="mm") = {0.015,0,0})
     annotation (Placement(transformation(extent={{40,260},{60,280}})));
   Components.BodyShape bodyShape22(
     shapeType=
@@ -308,7 +308,7 @@ model DFLG6DOF
     icon="modelica://Arduino/Resources/Shapes/I_Gripper_Foam_4Servo__3.png",
     color={150,150,150},
     angles={0,90,0},
-    r(displayUnit="mm") = {-0.01,0.013,-0.007})
+    r(each displayUnit="mm") = {-0.01,0.013,-0.007})
     annotation (Placement(transformation(extent={{-100,200},{-120,220}})));
   Components.BodyShape bodyShape23(
     shapeType=
@@ -316,7 +316,7 @@ model DFLG6DOF
     icon="modelica://Arduino/Resources/Shapes/I_Gripper_Foam_4Servo__3.png",
     color={150,150,150},
     angles={0,90,0},
-    r(displayUnit="mm") = {-0.01,0.013,0.009})
+    r(each displayUnit="mm") = {-0.01,0.013,0.009})
     annotation (Placement(transformation(extent={{100,200},{120,220}})));
   Components.Servo baseServo(minAngle=-1.5707963267949, maxAngle=
         1.5707963267949)
